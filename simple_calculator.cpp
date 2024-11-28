@@ -2,9 +2,10 @@
 using namespace std;
 
 int main() {
-    int num1;
-    int num2;
+    int num1, num2;
     char operation;
+
+    cout << "Welcome to the Simple Calculator!" << endl;
 
     cout << "Enter first number: ";
     cin >> num1;
@@ -12,7 +13,7 @@ int main() {
     cout << "Enter second number: ";
     cin >> num2;
 
-    cout << "Enter operator (+, -, *, /): ";
+    cout << "Enter operator (+, -, *, /, %): ";
     cin >> operation;
 
     if (operation == '+') {
@@ -24,12 +25,16 @@ int main() {
     } else if (operation == '/') {
         if (num2 != 0) {
             cout << "Result: " << num1 / num2 << endl;
-        }
-        else {
+        } else {
             cout << "Error! Division by zero is not allowed." << endl;
         }
-    }
-    else {
+    } else if (operation == '%') {
+        if (num2 != 0) {
+            cout << "Result: " << num1 % num2 << endl;
+        } else {
+            cout << "Error! Modulus by zero is not allowed." << endl;
+        }
+    } else {
         cout << "Invalid operator!" << endl;
     }
 
